@@ -67,3 +67,6 @@ server.log
 !.env.example
 
 /tests/
+
+.env.local
+.vercel
