@@ -155,7 +155,7 @@ export function Hero() {
                 variant="ghost"
                 className="rounded-full h-12 px-6 text-base font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 hover:bg-emerald-500/10"
               >
-                <a href={whatsappUrl(whatsappDefaultMsg(lang))} target="_blank" rel="noopener noreferrer">
+                <a href={whatsappUrl(whatsappDefaultMsg(lang))} target="_blank" rel="noopener noreferrer" data-track="whatsapp">
                   WhatsApp
                 </a>
               </Button>

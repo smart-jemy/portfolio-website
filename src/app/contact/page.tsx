@@ -92,6 +92,11 @@ export default function ContactPage() {
         : mailtoUrl(
             `${lang === "ar" ? "رسالة من" : "Message from"} ${name}`
           ) + `&body=${encodeURIComponent(composed)}`;
+    // window.open bypasses the global click tracker — report it explicitly.
+    const payload = JSON.stringify({ type: "click", path: location.pathname, label: `form-${target}` });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon("/api/track", new Blob([payload], { type: "application/json" }));
+    }
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
@@ -129,6 +134,7 @@ export default function ContactPage() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track={key}
                 className="group flex items-start gap-4 rounded-2xl border border-border/70 bg-card/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-[0_12px_40px_-16px_rgba(139,92,246,0.4)]"
               >
                 <span

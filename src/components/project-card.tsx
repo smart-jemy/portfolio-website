@@ -127,7 +127,7 @@ export function ProjectCard({
                 </Button>
                 {project.liveUrl && (
                   <Button asChild variant="outline" className="rounded-full font-bold">
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" data-track={`live:${project.slug}`}>
                       <ExternalLink className="size-4" aria-hidden />
                       {t.projectsSection.viewProject}
                     </a>

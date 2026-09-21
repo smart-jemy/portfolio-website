@@ -148,7 +148,7 @@ export function CaseStudy({ slug }: { slug: string }) {
           {project.liveUrl && (
             <div className="mt-6">
               <Button asChild variant="outline" className="rounded-full font-bold">
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" data-track={`live:${project.slug}`}>
                   <ExternalLink className="size-4" aria-hidden />
                   {t.caseStudy.viewLive}
                 </a>
@@ -361,7 +361,7 @@ export function CaseStudy({ slug }: { slug: string }) {
               <div className="mt-6 flex flex-wrap justify-center gap-3">
                 {hasWhatsapp ? (
                   <Button asChild className="rounded-full font-bold glow-sm">
-                    <a href={whatsappUrl(whatsappDefaultMsg(lang))} target="_blank" rel="noopener noreferrer">
+                    <a href={whatsappUrl(whatsappDefaultMsg(lang))} target="_blank" rel="noopener noreferrer" data-track="whatsapp">
                       {t.caseStudy.ctaButton}
                       <ArrowIcon className="size-4" aria-hidden />
                     </a>

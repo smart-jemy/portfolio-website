@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { langInitScript } from "@/lib/lang-init";
 import { site } from "@/config/site";
+import { Tracker } from "@/components/tracker";
 
 export const metadata: Metadata = {
   title: {
@@ -56,6 +57,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: langInitScript }} />
       </head>
       <body className="antialiased bg-background text-foreground min-h-screen flex flex-col font-sans">
+        <Tracker />
         <Providers>
           <Navbar />
           <main className="flex-1">{children}</main>

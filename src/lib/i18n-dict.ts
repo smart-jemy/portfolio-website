@@ -30,7 +30,7 @@ export const dict = {
         { value: "1+", label: "نظام إدارة حقيقي شغّال في السوق" },
         { value: "4+", label: "مشاريع حقيقية بـ Case Study كاملة" },
         { value: "13+", label: "مصدر استطلاع في أداة الأمن المفتوحة" },
-        { value: "100%", label: "شغل حقيقي — مش Demo" },
+        { value: "2", label: "أنظمة لايف شغّالة على Vercel الآن" },
       ],
     },
     projectsSection: {
@@ -199,7 +199,7 @@ export const dict = {
         { value: "1+", label: "Real management system live in production" },
         { value: "4+", label: "Real projects with full case studies" },
         { value: "13+", label: "Recon sources in the open-source security tool" },
-        { value: "100%", label: "Real work — not demos" },
+        { value: "2", label: "Live systems running on Vercel right now" },
       ],
     },
     projectsSection: {

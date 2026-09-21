@@ -33,7 +33,7 @@ export function CtaBand() {
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
                 {hasWhatsapp ? (
                   <Button asChild size="lg" className="rounded-full h-12 px-7 text-base font-bold glow">
-                    <a href={whatsappUrl(whatsappDefaultMsg(lang))} target="_blank" rel="noopener noreferrer">
+                    <a href={whatsappUrl(whatsappDefaultMsg(lang))} target="_blank" rel="noopener noreferrer" data-track="whatsapp">
                       <MessageCircle className="size-4" aria-hidden />
                       {t.cta.primary}
                     </a>
