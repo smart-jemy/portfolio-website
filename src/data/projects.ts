@@ -1,0 +1,657 @@
+// ============================================================
+// 📁 Projects Data — كل مشروع Case Study كاملة بالعربي والإنجليزي
+//
+// ✅ عشان تضيف مشروع جديد:
+//    1. انسخ شكل أي مشروع من اللي تحت
+//    2. عبّي البيانات (ar + en)
+//    3. خلي published: true
+//    وصفحة /projects هتعرضه تلقائيًا
+// ============================================================
+
+import type { LucideIcon } from "lucide-react";
+import {
+  ClipboardList,
+  Users,
+  LayoutDashboard,
+  UserCog,
+  Package,
+  BarChart3,
+  BellRing,
+  ShieldCheck,
+  Globe,
+  MousePointerClick,
+  CreditCard,
+  MessagesSquare,
+  Gauge,
+  Smartphone,
+  Radar,
+  Network,
+  Layers,
+  Terminal,
+  Sparkles,
+  Palette,
+  MoveHorizontal,
+} from "lucide-react";
+
+export type Localized = { ar: string; en: string };
+
+export type Feature = {
+  icon: LucideIcon;
+  title: Localized;
+  desc: Localized;
+};
+
+export type Screenshot = {
+  title: Localized;
+  /** أول ما تبعت الصور: حطها في public/screenshots/ واكتب المسار هنا زي "/screenshots/dashboard.png" */
+  src?: string;
+};
+
+export type Project = {
+  slug: string;
+  published: boolean;
+  emoji: string;
+  title: Localized;
+  /** العنوان الإنجليزي الفرعي زي "Custom Business Management System" */
+  subtitle: Localized;
+  short: Localized;
+  type: Localized;
+  year: string;
+  role: Localized;
+  technologies: string[];
+  /** لينك المشروع الحي (اختياري): موقع live أو الريبو على GitHub */
+  liveUrl?: string;
+  features: Feature[];
+  problem: Localized[];
+  solution: Localized[];
+  myRoleChips: string[];
+  results: Localized[];
+  impact: Localized[];
+  screenshots: Screenshot[];
+};
+
+export const projects: Project[] = [
+  // ==========================================================
+  // ✅ المشروع رقم 1 — نظام إدارة مركز صيانة الأجهزة
+  // ==========================================================
+  {
+    slug: "device-maintenance-center",
+    published: true,
+    emoji: "🏢",
+    title: {
+      ar: "نظام إدارة مركز صيانة الأجهزة",
+      en: "Device Maintenance Center Management System",
+    },
+    subtitle: {
+      ar: "نظام إدارة أعمال مخصص",
+      en: "Custom Business Management System",
+    },
+    short: {
+      ar: "نظام متكامل لإدارة عمليات مركز صيانة الأجهزة، بداية من استقبال الطلب وحتى التسليم.",
+      en: "A complete system to run a device maintenance center — from receiving the ticket all the way to delivery.",
+    },
+    type: {
+      ar: "نظام إدارة أعمال مخصص",
+      en: "Custom business management system",
+    },
+    year: "2024",
+    role: {
+      ar: "Full-Stack Developer — بناء كامل من الصفر",
+      en: "Full-Stack Developer — built end-to-end from scratch",
+    },
+    technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "HTML5", "CSS3"],
+    features: [
+      {
+        icon: ClipboardList,
+        title: { ar: "إدارة الطلبات ومراحل دورة العمل", en: "Tickets & workflow stages" },
+        desc: {
+          ar: "كل جهاز بيدخل المركز بيتسجل كطلب له حالة واضحة: استقبال، فحص، عرض سعر، موافقة، صيانة، جاهز، تم التسليم — ومفيش طلب بيتضيع.",
+          en: "Every device entering the center becomes a ticket with a clear status: intake, inspection, quote, approval, repair, ready, delivered — nothing falls through the cracks.",
+        },
+      },
+      {
+        icon: Users,
+        title: { ar: "إدارة العملاء والأجهزة", en: "Customers & devices" },
+        desc: {
+          ar: "ملف كامل لكل عميل وسجل بكل أجهزته وتاريخ صيانتها، فأي فني يقدر يرجع لتاريخ الجهاز في ثواني.",
+          en: "A complete profile per customer with all their devices and repair history — any technician can pull up a device's history in seconds.",
+        },
+      },
+      {
+        icon: LayoutDashboard,
+        title: { ar: "Dashboard وإحصائيات", en: "Dashboard & live stats" },
+        desc: {
+          ar: "لوحة تحكم مركزية بتعرفك فورًا: الطلبات المفتوحة، إيه اللي متأخر، إيرادات الشهر، وأداء الفريق — من غير ما تسأل حد.",
+          en: "A central dashboard that instantly shows open tickets, what's late, monthly revenue, and team performance — no need to ask around.",
+        },
+      },
+      {
+        icon: UserCog,
+        title: { ar: "إدارة الموظفين والفنيين", en: "Staff & technicians" },
+        desc: {
+          ar: "تكليف الطلبات للفنيين المناسبين ومتابعة إنجازهم، مع حساب لكل موظف بصلاحياته وشغله المسجل.",
+          en: "Assign tickets to the right technicians and track their progress — every employee has an account with their own role and logged activity.",
+        },
+      },
+      {
+        icon: Package,
+        title: { ar: "المخزون والمصروفات", en: "Inventory & expenses" },
+        desc: {
+          ar: "متابعة قطع الغيار والمخزون، وتسجيل مصروفات المركز التشغيلية — عشان الصورة المالية تفضل كاملة.",
+          en: "Track spare parts and stock levels, plus every operational expense — so the financial picture stays complete.",
+        },
+      },
+      {
+        icon: BarChart3,
+        title: { ar: "التقارير المالية", en: "Financial reports" },
+        desc: {
+          ar: "تقارير إيرادات ومصروفات وأرباح بفترات زمنية واضحة، بتستخرج أرقام المركز في دقايق بدل نهاية الشهر الكامل بالحسبة اليدوية.",
+          en: "Revenue, expense and profit reports over clear time ranges — pulling the center's numbers in minutes instead of a manual end-of-month scramble.",
+        },
+      },
+      {
+        icon: BellRing,
+        title: { ar: "الإشعارات وسجل النشاط", en: "Notifications & activity log" },
+        desc: {
+          ar: "تنبيهات لحظية للأحداث المهمة، وسجل كامل بكل اللي حصل في النظام ومين عمله — محاسبة شفافة.",
+          en: "Instant notifications for important events, plus a full audit log of everything that happened in the system and who did it.",
+        },
+      },
+      {
+        icon: ShieldCheck,
+        title: { ar: "نظام صلاحيات ودخول منفصل", en: "Roles & separate logins" },
+        desc: {
+          ar: "دخول منفصل للإدارة والموظفين والفنيين، وكل واحد يشوف بس اللي يخصه — بيانات المركز محمية ومنظمة.",
+          en: "Separate logins for admins, staff and technicians — everyone sees only what concerns them, keeping business data protected and organized.",
+        },
+      },
+    ],
+
+    problem: [
+      {
+        ar: "المركز كان شغّال بأسلوب يدوي بالكامل: الطلبات بتتسجل في دفاتر وإكسل، والأجهزة بتتتبع بالذاكرة والتوصيل الشفهي بين الموظفين. النتيجة كانت واضحة كل يوم: طلبات بتتأخر من غير ما حد ياخد باله، سؤال «جهازي فين ووصل لفين؟» كان بياخد وقت ومكالمات عشان يتحل، وبيانات العملاء والأجهزة كانت مبعثرة ومفيش سجل تاريخي لأي جهاز.",
+        en: "The center ran on a fully manual workflow: tickets were logged in notebooks and Excel, devices were tracked by memory and verbal hand-offs between staff. The cost showed up daily: tickets slipped through with nobody noticing, answering “where is my device and what stage is it in?” took time and phone calls, and customer and device data was scattered with no real history for any device.",
+      },
+      {
+        ar: "المشكلة التانية كانت في المال: المصروفات والإيرادات كانت بتتحسب يدويًا في آخر الشهر، والأرقام بتطلع مختلفة حسب مين بيتحسب. مكانش في صورة واضحة للربحية ولا تقارير تخلي صاحب المركز ياخد قرار مبني على أرقام — ولا حتى طريقة يعرف بيها إيه اللي بيتحرك في المخزون من قطع غيار.",
+        en: "The second problem was money: expenses and revenue were tallied manually at the end of each month, and the numbers changed depending on who did the counting. There was no clear profitability picture, no reports to support decisions — and not even a reliable way to know what was moving in and out of the spare-parts inventory.",
+      },
+    ],
+
+    solution: [
+      {
+        ar: "تم بناء نظام إدارة مخصص بالكامل على مقاس عمليات المركز، مش برنامج جاهز بيفرض طريقة شغل مرسومة عليه. في قلب النظام دورة عمل (Workflow) بتقسم حياة كل طلب لمراحل واضحة: من استقبال الجهاز وتسجيل حالته وبيانات العميل، لفحص أولي وعرض سعر، لموافقة العميل، للصيانة وتسجيل قطع الغيار المستخدمة، لحد التسليم النهائي والإغلاق المالي للطلب.",
+        en: "A fully custom management system was built around the center's actual operations — not an off-the-shelf product forcing its own workflow. At the heart of the system is a workflow that divides every ticket's life into clear stages: from device intake (with condition details and customer data), through inspection and quotation, customer approval, repair with logged spare-parts usage, all the way to final delivery and financial closure.",
+      },
+      {
+        ar: "فوق دورة العمل دي اتبنت الطبقات التانية: ملفات عملاء وأجهزة بسجل تاريخي كامل، لوحة تحكم بالإحصائيات الحية، إدارة مخزون مربوطة بالطلبات، وتقارير مالية بتطلع من البيانات نفسها — يعني أي رقم في التقرير ممكن يتتبع لطلباته الأصلية. وكل ده محمي بنظام صلاحيات بيضمن إن كل مستخدم يشوف بس مجاله.",
+        en: "On top of that workflow sit the other layers: customer and device files with full history, a live dashboard, inventory management tied to tickets, and financial reports generated from the same data — meaning any number in a report can be traced back to its source tickets. All of it is protected by a role-based permissions system so every user only sees their own scope.",
+      },
+    ],
+
+    myRoleChips: [
+      "Architecture",
+      "Database Design",
+      "Backend — Laravel",
+      "Frontend",
+      "Authentication & Roles",
+      "Dashboard & Reports",
+      "Deployment",
+    ],
+
+    results: [
+      {
+        ar: "النهارده النظام شغّال فعليًا وبيدير عمليات المركز يوم بيوم: كل جهاز بيدخل بيتسجل وبيتحرك في دورة العمل، وسؤال العميل «جهازي فين؟» بيتجاوب في ثواني من أي شاشة. المركز بقى عنده سجل مالي واضح وتقارير جاهزة في أي وقت، وصاحب المركز بيتابع كل حاجة من مكان واحد من غير مكالمات ولا ورق.",
+        en: "Today the system is live and runs the center's daily operations: every device that comes in is registered and moves through the workflow, and the customer question “where is my device?” is answered in seconds from any screen. The center now has a clear financial record and on-demand reports, and the owner monitors everything from one place — no calls, no paper.",
+      },
+    ],
+
+    impact: [
+      { ar: "تتبع كامل لكل طلب من لحظة الاستقبال لحد التسليم", en: "Full tracking of every ticket from intake to delivery" },
+      { ar: "أي استفسار عن حالة جهاز بيتجاوب في ثواني", en: "Any device-status question answered in seconds" },
+      { ar: "صورة مالية واضحة: إيرادات، مصروفات، وأرباح في تقارير جاهزة", en: "A clear financial picture: revenue, expenses and profit in ready reports" },
+      { ar: "قرارات مبنية على أرقام حية بدل التخمين", en: "Decisions driven by live numbers instead of guesswork" },
+      { ar: "مخزون قطع غيار تحت السيطرة ومربوط بالطلبات", en: "Spare-parts inventory under control, tied to tickets" },
+      { ar: "مسؤولية واضحة: سجل نشاط كامل لكل عملية في النظام", en: "Clear accountability: a complete audit trail for every action" },
+    ],
+
+    screenshots: [
+      {
+        title: { ar: "لوحة التحكم والإحصائيات الحية", en: "Dashboard & live stats" },
+        src: "/screenshots/maintenance-dashboard.png",
+      },
+      {
+        title: { ar: "الإشعارات وسجل نشاط النظام", en: "Notifications & activity log" },
+        src: "/screenshots/maintenance-reports.png",
+      },
+      {
+        title: { ar: "الفواتير — إنشاء فاتورة جديدة", en: "Invoices — creating a new invoice" },
+        src: "/screenshots/maintenance-invoice.png",
+      },
+      { title: { ar: "ملف العميل وسجل الأجهزة", en: "Customer profile & device history" } },
+    ],
+  },
+
+  // ==========================================================
+  // ✅ المشروع رقم 2 — SaaSFlow: صفحة هبوط عربية لمنصة SaaS
+  //    Live: https://smart-jemy.github.io/saasflow-landing/
+  // ==========================================================
+  {
+    slug: "saasflow-landing",
+    published: true,
+    emoji: "⚡",
+    title: {
+      ar: "SaaSFlow — صفحة هبوط منتج SaaS",
+      en: "SaaSFlow — SaaS Product Landing Page",
+    },
+    subtitle: {
+      ar: "تجربة هبوط عربية RTL متكاملة",
+      en: "A complete Arabic-first RTL landing experience",
+    },
+    short: {
+      ar: "صفحة هبوط عربية بالكامل لمنصة SaaS — مش قالب مترجم: تجربة بصرية متكاملة من أول Hero لحد الـ FAQ، مبنية عشان تقنع وتبيع.",
+      en: "A fully Arabic SaaS landing page — not a translated template: a complete visual experience from the hero down to the FAQ, built to convince and convert.",
+    },
+    type: { ar: "صفحة هبوط — UI/UX", en: "Landing page — UI/UX" },
+    year: "2025",
+    role: {
+      ar: "تصميم وتطوير كامل — مشروع فردي",
+      en: "Design & development — solo project",
+    },
+    technologies: ["HTML5", "Tailwind CSS", "JavaScript", "CSS3"],
+    liveUrl: "https://smart-jemy.github.io/saasflow-landing/",
+
+    features: [
+      {
+        icon: Globe,
+        title: { ar: "عربي RTL أصيل من الأساس", en: "Arabic-first RTL, not a translation" },
+        desc: {
+          ar: "التصميم معمول بالعربي من أول سطر: بنية RTL أصلية، خطوط ومقاسات محسوبة للعربي، وصياغة تسويقية مكتوبة بالعربي مش مترجمة — وده اللي بيبني الثقة مع الزائر في ثواني.",
+          en: "Designed in Arabic from the first line: a native RTL layout, type sizes calculated for Arabic, and marketing copy written — not translated — which is what builds trust with visitors in seconds.",
+        },
+      },
+      {
+        icon: LayoutDashboard,
+        title: { ar: "عرض تفاعلي للمنتج", en: "Interactive product showcase" },
+        desc: {
+          ar: "معاينة لوحة تحكم حية جوه الصفحة بتعرض إيرادات ومشاريع وتحليلات — الزائر بيشوف المنتج وهو بيتنقل، مش بس بيقرأ عنه.",
+          en: "A live dashboard preview inside the page showing revenue, projects and analytics — visitors see the product while browsing it, not just read about it.",
+        },
+      },
+      {
+        icon: MousePointerClick,
+        title: { ar: "حركة وأرقام بتعد قدامك", en: "Motion & live counters" },
+        desc: {
+          ar: "عدادات بتعد لفوق أول ما تظهر، عناصر بتتحرك مع السكرول، وتفاصيل صغيرة في كل مكان — الصفحة «حية» وبتستجيب، مش صورة ثابتة.",
+          en: "Counters that tick up as they appear, elements that move with scroll, and micro-details everywhere — the page feels alive and responsive, not a static brochure.",
+        },
+      },
+      {
+        icon: CreditCard,
+        title: { ar: "خطط أسعار وأسئلة متكررة", en: "Pricing plans & FAQ" },
+        desc: {
+          ar: "قسم أسعار واضح بباقات مرتبة، وقسم FAQ بيزيل الاعتراضات الشائعة قبل ما الزائر يوصل للـ CTA النهائي — رحلة إقناع كاملة جوه صفحة واحدة.",
+          en: "A clear pricing section with organized tiers, and an FAQ that removes common objections before the final CTA — a full persuasion journey in a single page.",
+        },
+      },
+      {
+        icon: MessagesSquare,
+        title: { ar: "إثبات اجتماعي مبني جوه الصفحة", en: "Social proof built in" },
+        desc: {
+          ar: "آراء عملاء بأسماء ووظايفهم، وشريط شركات موثوقة بيتحرك باستمرار — الثقة بتتبني في الصفحة نفسها مش في لينك خارجي.",
+          en: "Testimonials with names and roles, plus a continuously moving trusted-companies strip — trust is built inside the page itself, not delegated to an external link.",
+        },
+      },
+      {
+        icon: Smartphone,
+        title: { ar: "Responsive من الموبايل للديسكتوب", en: "Responsive from mobile to desktop" },
+        desc: {
+          ar: "كل قسم متظبط على كل مقاس شاشة: قائمة موبايل، معاينات بتتقلب، وشبكات بترتب نفسها — تجربة واحدة متكاملة على أي جهاز.",
+          en: "Every section is tuned for every screen size: mobile menu, flipping previews, and self-rearranging grids — one seamless experience on any device.",
+        },
+      },
+    ],
+
+    problem: [
+      {
+        ar: "منتجات الـ SaaS بيتحكم فيها الانطباع الأول في ثواني، والانطباع ده بيصنعه شكل صفحة الهبوط. والسوق العربي مليان صفحات إما مترجمة حرفيًا بـ RTL مكسور، أو قوالب أجنبية اتعربت بالعافية: نصوص متراكبة، خطوط مش متوافقة، وحروف عربية مقطوعة من بعضها. النتيجة إن منتج ممتاز ممكن يبان «هيّن» قبل ما حد يجربه أصلًا.",
+        en: "SaaS products are judged by first impressions measured in seconds, and the landing page makes that impression. The Arabic market is full of pages that are either literally translated with broken RTL, or foreign templates awkwardly localized: overlapping text, mismatched fonts, disconnected Arabic glyphs. An excellent product can look cheap before anyone even tries it.",
+      },
+      {
+        ar: "التحدي كان واضح: إزاي تبني صفحة هبوط عربية «تحس إنها أصلية» فعلًا — بنفس مستوى الإنتاج العالمي من ناحية الحركة والإيقاع والإقناع — وتثبت إن العربي مش مرحلة ثانوية بتتعمل بعد الإنجليزي.",
+        en: "The challenge was clear: build an Arabic landing page that genuinely feels native — at global production quality in motion, rhythm and persuasion — and prove that Arabic is not a secondary afterthought bolted on after English.",
+      },
+    ],
+
+    solution: [
+      {
+        ar: "اتبنى الصفحة بالعربي من أول قرار تصميمي: بنية RTL أصلية من غير محاولات عكس CSS، تايبوغرافي مضبوط للعربي، وصياغة تسويقية كتبت بالعربي للعقلية العربية. وكل قسم مصمم ليخدم خطوة واحدة في رحلة الزائر: الفهم (المزايا)، الرؤية (المعاينة التفاعلية للمنتج)، الثقة (الآراء والأسعار والـ FAQ)، وبعدها الإجراء (CTA).",
+        en: "The page was built in Arabic from the first design decision: a native RTL structure with no CSS-flipping hacks, typography tuned for Arabic, and marketing copy written in Arabic for an Arabic-speaking audience. Each section serves one step of the visitor journey: understand (features), see (interactive product demo), trust (testimonials, pricing, FAQ), then act (CTA).",
+      },
+      {
+        ar: "تقنيًا: صفحة static خفيفة بـ Tailwind CSS، وحركات مبنية بـ JavaScript خالص مع IntersectionObserver — الحركة بتشتغل بس لما العنصر يبقى ظاهر، فالأداء بيفضل سريع حتى على موبايلات متوسطة. مفيش أي framework تقيل: الحاجة الوحيدة اللي الزائر بيستنى عليها هي المحتوى نفسه.",
+        en: "Technically: a lightweight static page in Tailwind CSS with motion built in pure JavaScript and IntersectionObserver — animations only run when their element is visible, so performance stays fast even on mid-range phones. No heavy framework involved: the only thing a visitor waits for is the content itself.",
+      },
+    ],
+
+    myRoleChips: [
+      "UI/UX Design",
+      "Arabic Copywriting",
+      "RTL Engineering",
+      "Tailwind CSS",
+      "Vanilla JS Animations",
+      "Performance",
+    ],
+
+    results: [
+      {
+        ar: "الصفحة live ومتاحة للتجربة على GitHub Pages، ومستخدمة كـ showcase أساسي في الـ Portfolio: بتثبت إني أقدر أسوّق منتج بالعربي بنفس مستوى صفحات الهبوط العالمية — من قرار التصميم الأول لحد آخر micro-interaction.",
+        en: "The page is live on GitHub Pages and serves as a core showcase in this portfolio: it proves I can market a product in Arabic at the same production level as the world's best landing pages — from the first design decision to the last micro-interaction.",
+      },
+    ],
+
+    impact: [
+      { ar: "تجربة RTL عربية أصيلة بمستوى إنتاج عالمي", en: "Authentic Arabic RTL experience at global production quality" },
+      { ar: "رحلة تحويل كاملة: مزايا ← معاينة ← ثقة ← إجراء", en: "A complete conversion journey: features → demo → trust → action" },
+      { ar: "أداء خفيف من غير أي framework تقيل", en: "Lightweight performance with zero heavy frameworks" },
+      { ar: "أساس جاهز لأي منتج SaaS بيستهدف السوق العربي", en: "A ready foundation for any SaaS product targeting the Arabic market" },
+    ],
+
+    screenshots: [
+      {
+        title: { ar: "الـ Hero — الانطباع الأول", en: "Hero — the first impression" },
+        src: "/screenshots/saasflow-hero.png",
+      },
+      {
+        title: { ar: "أقسام المزايا والمحتوى", en: "Features & content sections" },
+        src: "/screenshots/saasflow-features.png",
+      },
+    ],
+  },
+
+  // ==========================================================
+  // ✅ المشروع رقم 3 — CloudFail Killer: أداة أمن مفتوحة المصدر
+  //    GitHub: https://github.com/smart-jemy/cloudfail-killer
+  // ==========================================================
+  {
+    slug: "cloudfail-killer",
+    published: true,
+    emoji: "🛡️",
+    title: {
+      ar: "CloudFail Killer — أداة استطلاع أمني",
+      en: "CloudFail Killer — Security Recon Tool",
+    },
+    subtitle: {
+      ar: "أداة مفتوحة المصدر لاكتشاف الـ Origin IP المخفي خلف Cloudflare",
+      en: "Open-source tool to discover origin IPs hidden behind Cloudflare",
+    },
+    short: {
+      ar: "أداة CLI مفتوحة المصدر بـ Python بتجمع 13+ مصدر استطلاع سلبي وفعال في pipeline من 6 مراحل، عشان تكشف الـ IP الحقيقي المخفي وراء بروكسي Cloudflare — بنتائج مرتبة بنسبة ثقة.",
+      en: "An open-source Python CLI that aggregates 13+ passive and active recon sources into a 6-stage pipeline to uncover the real origin IP behind Cloudflare's proxy — with confidence-scored results.",
+    },
+    type: { ar: "أداة أمن مفتوحة المصدر — CLI", en: "Open-source security tool — CLI" },
+    year: "2025",
+    role: {
+      ar: "Author & Maintainer — بناء كامل من الصفر",
+      en: "Author & Maintainer — built from scratch",
+    },
+    technologies: ["Python", "IPv6", "Cybersecurity", "CLI", "Open Source"],
+    liveUrl: "https://github.com/smart-jemy/cloudfail-killer",
+
+    features: [
+      {
+        icon: Radar,
+        title: { ar: "13+ مصدر استطلاع سلبي وفعال", en: "13+ passive & active recon sources" },
+        desc: {
+          ar: "جمع آلي من مصادر سلبية (سجلات DNS التاريخية، قواعد بيانات الشهادات، أرشيفات) ومصادر فعالة (فحص مباشر) — كل مصدر بيزوّد فرصة الوصول للـ IP الحقيقي.",
+          en: "Automated aggregation across passive sources (historical DNS records, certificate databases, archives) and active ones (direct probing) — every source adds another path to the real origin IP.",
+        },
+      },
+      {
+        icon: Network,
+        title: { ar: "دعم IPv6 أصلي", en: "IPv6-native support" },
+        desc: {
+          ar: "الأدوات القديمة بتفكر IPv4 بس — الأداة دي بتعامل مع IPv6 كموااطنة من الدرجة الأولى: بتفحص وتفهم سجلات AAAA وCNAME في كل مراحل التحليل.",
+          en: "Legacy tools think in IPv4 only — this one treats IPv6 as a first-class citizen: it probes and interprets AAAA and CNAME records throughout every analysis stage.",
+        },
+      },
+      {
+        icon: Layers,
+        title: { ar: "Pipeline إثراء من 6 مراحل", en: "6-stage enrichment pipeline" },
+        desc: {
+          ar: "كل نتيجة بتعدي عبر مراحل تحقق وإثراء متتالية — من الاكتشاف الأولي لحد التأكيد النهائي — عشان الضوضاء تقل والدقة تزيد مع كل مرحلة.",
+          en: "Every finding passes through sequential enrichment and verification stages — from first discovery to final confirmation — reducing noise and increasing precision at each step.",
+        },
+      },
+      {
+        icon: Gauge,
+        title: { ar: "نتائج مرتبة بنسبة ثقة", en: "Confidence-scored results" },
+        desc: {
+          ar: "بدل قايمة IPs خام من غير ترتيب، الأداة بتحسب نسبة ثقة لكل نتيجة وترتبها — الباحث بيبدأ من أقوى احتمال، مش من الصفر.",
+          en: "Instead of a raw unordered list of IPs, the tool computes a confidence score per finding and ranks them — researchers start from the strongest lead, not from zero.",
+        },
+      },
+      {
+        icon: Terminal,
+        title: { ar: "تجربة CLI محترمة", en: "A proper CLI experience" },
+        desc: {
+          ar: "واجهة سطر أوامر نظيفة: مخرجات واضحة، مراحل مفهومة، وتقدّم مرئي — أداة معمولة تُستخدم يوميًا في شغل حقيقي، مش demo أكاديمي.",
+          en: "A clean command-line interface: clear output, understandable stages, visible progress — a tool built for daily real-world use, not an academic demo.",
+        },
+      },
+      {
+        icon: ShieldCheck,
+        title: { ar: "مفتوح المصدر بترخيص MIT", en: "MIT-licensed open source" },
+        desc: {
+          ar: "الكود كله عام على GitHub بترخيص MIT، معمول modular عشان إضافة مصدر استطلاع جديد تبقى أسطر معدودة مش إعادة كتابة — جاهز للمراجعة والتوسع من المجتمع.",
+          en: "The full code is public on GitHub under the MIT license, structured modularly so adding a new recon source takes a few lines instead of a rewrite — ready for community review and extension.",
+        },
+      },
+    ],
+
+    problem: [
+      {
+        ar: "في اختبارات الاختراق والتحقيق الأمني، من أعيق العوائق إن الهدف مخفي وراء Cloudflare: الـ IP الحقيقي للسيرفر متغطي بالبروكسي، وكل تقييم أمني بيقف قدام حاجز الـ CDN. الأدوات الموجودة — زي CloudFail الأصلية — اتطورت لحد نقطة واتركت من سنين: مصادرها اتبهرت مع الوقت، وما بتتعاملش غير مع IPv4.",
+        en: "In penetration testing and security research, one of the hardest blockers is a target hidden behind Cloudflare: the server's real IP is masked by the proxy, and every assessment stops at the CDN wall. Existing tools — like the original CloudFail — were built, abandoned for years, and left behind: their data sources decayed, and they only handle IPv4.",
+      },
+      {
+        ar: "والمشكلة الأعمق كانت في شكل النتائج نفسها: الأدوات الموجودة بترمي عليك قايمة IP خام من غير ترتيب ولا تقييم، والباحث بيقعد يجرب واحده واحدة يدويًا. المطلوب كان أداة حديثة بتجمع المصادر، وتتحقق، وترتب النتائج بذكاء — مش أداة بتضيف شغل بدل ما تقلله.",
+        en: "The deeper problem was the shape of the results themselves: existing tools dump a raw list of IPs with no ranking or scoring, leaving the researcher to test them one by one manually. What was needed was a modern tool that aggregates sources, verifies findings, and ranks results intelligently — one that removes work instead of adding it.",
+      },
+    ],
+
+    solution: [
+      {
+        ar: "بنيت CloudFail-Killer (cloudkill) كإعادة بناء حديثة بالكامل للفكرة: محرك تجميع بيجمع الدليل من 13+ مصدر سلبي وفعال، وpipeline من 6 مراحل بيثري ويتحقق من كل نتيجة على حدة. وبدل ما الأداة ترمي عليك ملف غامق، بتسلمك نتائج مرتبة بنسبة ثقة — وكل نتيجة معاها مصدرها اللي بيخليك توصلها.",
+        en: "I built CloudFail-Killer (cloudkill) as a complete modern rebuild of the idea: an aggregation engine that gathers evidence from 13+ passive and active sources, and a 6-stage pipeline that enriches and verifies every finding individually. Instead of dumping an opaque file, it hands you confidence-ranked results — each with the source evidence that led to it.",
+      },
+      {
+        ar: "الدعم الأصلي للـ IPv6 كان قرار تصميم أساسي مش ميزة إضافية: كل مرحلة بتفهم سجلات AAAA وCNAME ونطاقات IPv6 كأنها جزء طبيعي من التحليل. والكود معمول modular بحت — كل مصدر استطلاع وحدة مستقلة، فإضافة مصدر جديد أو تحديث القديم مش بيلمس باقي النظام.",
+        en: "Native IPv6 support was a core design decision, not a bolted-on feature: every stage understands AAAA and CNAME records and IPv6 ranges as a natural part of the analysis. The code is strictly modular — each recon source is an independent unit, so adding or updating one never touches the rest of the system.",
+      },
+    ],
+
+    myRoleChips: [
+      "Architecture",
+      "Python",
+      "Recon Sources",
+      "Enrichment Pipeline",
+      "CLI/UX",
+      "Open Source",
+    ],
+
+    results: [
+      {
+        ar: "الأداة منشورة على GitHub بترخيص MIT ومتاحة للباحثين الأمنيين، ووراها تقييم حقيقي من مجتمع الـ DevOps: «CloudFail Killer حلّت مشكلة حقيقية بيواجهها ناس كتير — الكود جاهز للإنتاج من أول يوم: modular، موثق، ومتابع فعلًا.»",
+        en: "The tool is published on GitHub under the MIT license and available to security researchers, backed by a real community review from a DevOps engineer: “CloudFail Killer solved a real problem that many teams face. The code quality was production-ready from day one — modular, well-documented, and actually maintained.”",
+      },
+    ],
+
+    impact: [
+      { ar: "إعادة بناء حديثة لأداة كلاسيكية اتوقفت عن التطوير", en: "A modern rebuild of a classic, abandoned tool" },
+      { ar: "نتائج مرتبة بنسبة ثقة بدل قايم خام", en: "Confidence-scored results instead of raw lists" },
+      { ar: "دعم IPv6 أصلي من أول قرار تصميمي", en: "Native IPv6 support from the first design decision" },
+      { ar: "كود مفتوح قابقل للمراجعة والتوسع من المجتمع", en: "Open code, reviewable and extendable by the community" },
+    ],
+
+    screenshots: [
+      {
+        title: { ar: "المشروع على GitHub — بترخيص MIT", en: "The project on GitHub — MIT licensed" },
+        src: "/screenshots/cloudfail-repo.png",
+      },
+    ],
+  },
+
+  // ==========================================================
+  // ✅ المشروع رقم 4 — سلسلة صفحات الهبوط السينمائية
+  //    MONOLITH · OBLIVION · ECHO · NOVA
+  // ==========================================================
+  {
+    slug: "cinematic-landings",
+    published: true,
+    emoji: "🎬",
+    title: {
+      ar: "MONOLITH · OBLIVION · ECHO · NOVA",
+      en: "MONOLITH · OBLIVION · ECHO · NOVA",
+    },
+    subtitle: {
+      ar: "مجموعة صفحات هبوط سينمائية تفاعلية — WebGL وMotion",
+      en: "A collection of cinematic interactive landing pages — WebGL & motion",
+    },
+    short: {
+      ar: "أربع صفحات هبوط داكنة بروح سينمائية — كل واحدة بعالمها: شاشات إقلاع terminal، كرات WebGL متحولة، نصوص جسيمات، ومؤشرات مخصصة بذيول ضوئية. سلسلة بتثبت إن صفحة الهبوط ممكن تكون تجربة.",
+      en: "Four dark, cinematic landing pages — each with its own world: terminal boot screens, morphing WebGL spheres, particle text, and custom cursors with light trails. A series proving a landing page can be an experience.",
+    },
+    type: { ar: "واجهات إبداعية — WebGL & Motion", en: "Creative front-end — WebGL & motion" },
+    year: "2025",
+    role: {
+      ar: "تصميم وتطوير كامل — سلسلة شخصية",
+      en: "Design & development — personal series",
+    },
+    technologies: ["HTML5", "Tailwind CSS", "JavaScript", "WebGL", "Canvas", "CSS3"],
+    liveUrl: "https://smart-jemy.github.io/monolith-landing/",
+
+    features: [
+      {
+        icon: Terminal,
+        title: { ar: "شاشات إقلاع سينمائية", en: "Cinematic boot screens" },
+        desc: {
+          ar: "كل صفحة بتفتح بتسلسل إقلاع خاص بيها: أسطر terminal بتنزل واحدة واحدة بإيقاع محسوب — الترقب بيتبنى سطر بسطر قبل ما البراند يظهر. التقنية في خدمة الإحساس.",
+          en: "Every page opens with its own boot sequence: terminal lines dropping one by one at a calculated pace — anticipation builds line by line before the brand reveals itself. Technology in service of feeling.",
+        },
+      },
+      {
+        icon: Sparkles,
+        title: { ar: "WebGL حية بتعمل morphing", en: "Live morphing WebGL" },
+        desc: {
+          ar: "كرة متحولة بأربع أوكتافات ضوضاء في MONOLITH، icosaedron سلكي بأوجه مزدوجة في OBLIVION، وsphere حالمة في ECHO — رسومات ثلاثية الأبعاد realtime شغالة في المتصفح مباشرة.",
+          en: "A 4-octave morphing noise sphere in MONOLITH, a dual-pass wireframe icosahedron in OBLIVION, and a dreamlike sphere in ECHO — realtime 3D graphics running directly in the browser.",
+        },
+      },
+      {
+        icon: MousePointerClick,
+        title: { ar: "مؤشرات وتفاعلات مخصصة", en: "Custom cursors & interactions" },
+        desc: {
+          ar: "مؤشر مخصص بذيول ضوئية بتتبع الحركة، ripple بيتمدد عند الضغط، وcard stacks بتستجيب للسكرول — كل تفصيلة معمولة عشان الصفحة تحس إنها حية وبتحس فيك.",
+          en: "Custom cursors with light trails following motion, ripples expanding on click, and card stacks that respond to scroll — every detail engineered so the page feels alive and aware of you.",
+        },
+      },
+      {
+        icon: Palette,
+        title: { ar: "هوية بصرية مستقلة لكل عالم", en: "A distinct visual identity per world" },
+        desc: {
+          ar: "ليموني على أسود لـ MONOLITH، ذهبي دافي لـ ECHO، أزرق سماوي لـ NOVA — نفس العائلة السينمائية بهويات مختلفة تمامًا: تايبوغرافي، ألوان، وإيقاع مختلف لكل براند.",
+          en: "Lime on black for MONOLITH, warm gold for ECHO, cyan for NOVA — the same cinematic family with completely different identities: unique typography, color, and rhythm per brand.",
+        },
+      },
+      {
+        icon: MoveHorizontal,
+        title: { ar: "سرد بصري مختلف", en: "Alternative visual storytelling" },
+        desc: {
+          ar: "شريط marquee بيلف باستمرار، horizontal scroll في NOVA، وتايبوغرافي كبيرة جريئة — الصفحة بتحكي قصتها بإيقاع مختلف تمامًا عن الصفحات التقليدية.",
+          en: "Endlessly looping marquees, horizontal scroll in NOVA, and bold oversized typography — each page tells its story with a rhythm completely different from conventional layouts.",
+        },
+      },
+      {
+        icon: Gauge,
+        title: { ar: "أداء سلس رغم كل الفخامة", en: "Smooth performance despite the spectacle" },
+        desc: {
+          ar: "كل الفخامة دي معمولة بـ vanilla JavaScript وCanvas وWebGL خام — من غير أي مكتبة 3D تقيلة، مع rAF وrendering محسوب عشان السلاسة تفضل معاك في كل إطار.",
+          en: "All of this spectacle is built with vanilla JavaScript, Canvas and raw WebGL — no heavy 3D libraries, with rAF and carefully budgeted rendering to keep every frame smooth.",
+        },
+      },
+    ],
+
+    problem: [
+      {
+        ar: "معظم صفحات الهبوط بتنطلق من نفس القالب: hero أبيض، ثلاث كروت، وCTA أزرق. بالنسبة لبراندات عوالم الـ gaming والـ AI والإبداع، ده كارثة انطباعات: المنتج بيوعد بعالم مختلف تمامًا، وصفحته شبه أي حاجة تانية في السوق. الفجوة بين اللي المنتج بيقوله واللي صفحته بتعمله هي اللي بتضيّع الثقة من أول ثانية.",
+        en: "Most landing pages start from the same template: a white hero, three cards, and a blue CTA. For brands in gaming, AI and creative worlds, that's an impressions disaster: the product promises a completely different universe, while its page looks like everything else on the market. The gap between what a product says and what its page does is what loses trust in the first second.",
+      },
+      {
+        ar: "والتحدي التقني كان حقيقي بنفس القوة: إزاي تحقق المستوى ده من الحركة والعمق والتفاعل من غير ما تحوّل الصفحة لحمولة تقيلة — عشان تفضل شغالة سلسة على أجهزة عادية ومتصفحات موبايل، ومش بس على ماكينات التطوير.",
+        en: "And the technical challenge was just as real: how do you reach that level of motion, depth and interactivity without turning the page into a heavy load — keeping it fluid on ordinary devices and mobile browsers, not just on developer machines.",
+      },
+    ],
+
+    solution: [
+      {
+        ar: "بنيت سلسلة من أربع صفحات، كل واحدة بمفهوم واسم وهوية كاملة: MONOLITH (محرك spatial إبداعي)، OBLIVION (عالم موازي بطاقة أصعب)، ECHO (منصة ذكاء إبداعي)، وNOVA (نفس العائلة بطاقة تالتة). كل صفحة بتبدأ بشاشة إقلاع سينمائية، وبعدها عالم متكامل: WebGL حية، مؤشرات مخصصة، وشريط كلمات بيلف، وتايبوغرافي جريئة.",
+        en: "I built a series of four pages, each with its own concept, name and complete identity: MONOLITH (a spatial creation engine), OBLIVION (a parallel world with a harder edge), ECHO (a creative intelligence platform), and NOVA (the family's third voice). Every page opens with a cinematic boot sequence, then unfolds a complete world: live WebGL, custom cursors, looping word ribbons, and bold typography.",
+      },
+      {
+        ar: "تقنيًا، كل حاجة معمولة بالكود: Canvas وWebGL خام مع requestAnimationFrame للرسومات، وحركات مربوطة بـ IntersectionObserver عشان مفيش حاجة تشتغل غير وهي ظاهرة على الشاشة. النتيجة: صفحات فخامة شكلاً وخفيفة وزنًا — عمق بصري حقيقي من غير أي framework 3D تقيل في الميزان.",
+        en: "Technically, everything is drawn by code: raw Canvas and WebGL with requestAnimationFrame for graphics, and motion bound to IntersectionObserver so nothing runs until it's on screen. The result: pages that are luxurious to look at and light to load — real visual depth with no heavy 3D framework in the weight budget.",
+      },
+    ],
+
+    myRoleChips: [
+      "Concept & Art Direction",
+      "WebGL / Canvas",
+      "Motion Design",
+      "Custom Cursors",
+      "Tailwind CSS",
+      "Performance",
+    ],
+
+    results: [
+      {
+        ar: "الأربع صفحات live على GitHub Pages وبتشتغل كـ gallery تفاعلي: أي حد بيدخل أي صفحة بيفهم في ثواني إني أقدر أبني واجهات مش زي الكل — ودي الصفحات اللي بتفتح باب الشغل الإبداعي مع العملاء اللي عايزين حاجة استثنائية فعلًا.",
+        en: "All four pages are live on GitHub Pages and work as an interactive gallery: anyone entering any page understands in seconds that I can build interfaces unlike everyone else's — and these are the pages that open the door to creative work with clients who genuinely want something exceptional.",
+      },
+    ],
+
+    impact: [
+      { ar: "أربعة عوالم بصرية مكتملة — لكل براند هوية مختلفة", en: "Four complete visual worlds — a different identity per brand" },
+      { ar: "حركة WebGL وCanvas realtime بـ vanilla JS", en: "Realtime WebGL & Canvas motion in vanilla JS" },
+      { ar: "أداء سلس من غير مكتبات 3D تقيلة", en: "Smooth performance without heavy 3D libraries" },
+      { ar: "سلسلة بتوثّق الحد الأعلى لقدرات الواجهات عندي", en: "A series documenting the ceiling of my front-end craft" },
+    ],
+
+    screenshots: [
+      {
+        title: { ar: "MONOLITH — شاشة الإقلاع", en: "MONOLITH — boot sequence" },
+        src: "/screenshots/monolith-hero.png",
+      },
+      {
+        title: { ar: "OBLIVION — Icosahedron سلكي", en: "OBLIVION — wireframe icosahedron" },
+        src: "/screenshots/oblivion-hero.png",
+      },
+      {
+        title: { ar: "ECHO — كرة WebGL متحولة", en: "ECHO — morphing WebGL sphere" },
+        src: "/screenshots/echo-hero.png",
+      },
+      {
+        title: { ar: "NOVA — نص الجسيمات", en: "NOVA — particle text" },
+        src: "/screenshots/nova-hero.png",
+      },
+    ],
+  },
+];
+
+export function getPublishedProjects() {
+  return projects.filter((p) => p.published);
+}
+
+export function getProjectBySlug(slug: string) {
+  return projects.find((p) => p.slug === slug);
+}
