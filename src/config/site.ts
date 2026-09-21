@@ -30,8 +30,8 @@ export const site = {
     github: "https://github.com/smart-jemy",
     linkedin: "", // ⬅️ حط يوزرنيم LinkedIn لما تبعتّه
     email: "ntgi46@proton.me",
-    whatsapp: "", // ⬅️ حط رقم واتساب بصيغة دولية من غير + لما تجهز
-    whatsappDisplay: "",
+    whatsapp: "201148252590", // بصيغة دولية من غير +
+    whatsappDisplay: "+20 114 825 2590",
   },
 
   // 🟢 متاح لمشاريع جديدة؟

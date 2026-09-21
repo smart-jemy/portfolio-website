@@ -646,6 +646,117 @@ export const projects: Project[] = [
       },
     ],
   },
+
+  // ==========================================================
+  // ✅ المشروع رقم 5 — يلا شياكه: متجر إلكتروني كامل
+  //    Live: https://yallashiaka.vercel.app
+  // ==========================================================
+  {
+    slug: "yallashiaka-store",
+    published: true,
+    emoji: "🛍️",
+    title: {
+      ar: "يلا شياكه — متجر أحذية وإكسسوارات",
+      en: "Yalla Shiaka — Shoes & Accessories Store",
+    },
+    subtitle: {
+      ar: "متجر إلكتروني مع لوحات أدمن ومشرفين",
+      en: "E-commerce store with admin & supervisor dashboards",
+    },
+    short: {
+      ar: "متجر إلكتروني كامل: سلة شراء، طلبات، لوحة أدمن، ولوحة مشرفين بنظام اعتماد للمنتجات.",
+      en: "A complete e-commerce store: cart, orders, an admin dashboard, and a supervisor panel with a product approval workflow.",
+    },
+    type: {
+      ar: "متجر إلكتروني",
+      en: "E-commerce store",
+    },
+    year: "2026",
+    role: {
+      ar: "Full-Stack Developer — بناء كامل من الصفر",
+      en: "Full-Stack Developer — built end-to-end from scratch",
+    },
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Prisma", "SQLite", "Tailwind CSS"],
+    liveUrl: "https://yallashiaka.vercel.app",
+    features: [
+      {
+        icon: Package,
+        title: { ar: "كتالوج منتجات وسلة شراء", en: "Catalog & shopping cart" },
+        desc: {
+          ar: "منتجات بالصور والمقاسات والألوان والمخزون، سلة شراء بحالة محفوظة، وصفحة تفاصيل لكل منتج.",
+          en: "Products with images, sizes, colors and stock, a persistent cart, and a detail page per product.",
+        },
+      },
+      {
+        icon: ShieldCheck,
+        title: { ar: "مصادقة وصلاحيات بأدوار", en: "Role-based auth" },
+        desc: {
+          ar: "ثلاثة أدوار: أدمن، مشرف، وعميل — كلمات سر مشفرة بـ scrypt وجلسات موقّعة بـ HMAC بدون تخزين في قاعدة البيانات.",
+          en: "Three roles: admin, supervisor, and customer — scrypt-hashed passwords and HMAC-signed stateless sessions.",
+        },
+      },
+      {
+        icon: UserCog,
+        title: { ar: "نظام اعتماد المنتجات", en: "Product approval workflow" },
+        desc: {
+          ar: "المشرف يضيف منتجاته فينتظر مراجعة الأدمن: اعتماد أو رفض بسبب واضح — محتوى المتجر تحت سيطرة صاحبه.",
+          en: "Supervisors submit products that wait for admin review: approve, or reject with a clear reason — the owner stays in control of the catalog.",
+        },
+      },
+      {
+        icon: BarChart3,
+        title: { ar: "لوحات تحكم وإحصائيات", en: "Dashboards & sales stats" },
+        desc: {
+          ar: "لوحة أدمن للمستخدمين والمنتجات والطلبات، ولوحة مشرف بمنتجاته ومبيعاته — كل قرار مسنود برقم.",
+          en: "An admin panel for users, products and orders, plus a supervisor panel with their own products and sales — decisions backed by numbers.",
+        },
+      },
+      {
+        icon: Gauge,
+        title: { ar: "أمان وحدود استخدام", en: "Security & rate limiting" },
+        desc: {
+          ar: "تحقق من كل مدخل على السيرفر، حدود لمحاولات الدخول، ورفع ملفات متحكم فيه — جاهز للعمل الحقيقي.",
+          en: "Server-side validation on every input, login rate limiting, and controlled file uploads — ready for real work.",
+        },
+      },
+    ],
+    problem: [
+      { ar: "التجار الصغار محتاجين متجر حقيقي بسرعة وبأقل تكلفة، والحلول الجاهزة إما غالية أو مش بتتحكم فيها.", en: "Small merchants need a real store fast and cheap; off-the-shelf platforms are either expensive or impossible to control." },
+      { ar: "محتاجين أكتر من متجر: فريق بيع (مشرفين) بيضيف منتجاته، وصاحب المتجر لازم يوافق على كل حاجة قبل النشر.", en: "They need more than a storefront: a sales team (supervisors) adding products, with the owner approving everything before it goes live." },
+      { ar: "لوحات التحكم الجاهزة معقدة للتجار — محتاجين حاجة بسيطة وسريعة وبالعربي.", en: "Stock dashboards are too complex for merchants — they need something simple, fast, and in Arabic." },
+    ],
+    solution: [
+      { ar: "بنيت المتجر بـ Next.js وPrisma: واجهة عربية RTL كاملة وسريعة، مع تجربة شراء في خطوات قليلة.", en: "I built the store with Next.js and Prisma: a fast, fully RTL Arabic UI with a checkout that takes a few steps." },
+      { ar: "صممت نظام أدوار واضح: العميل يشتري، المشرف يبيع ويتابع مبيعاته، والأدمن يدير ويعتمد كل شيء.", en: "I designed clear roles: customers buy, supervisors sell and track their sales, and the admin manages and approves everything." },
+      { ar: "خليت الجلسات موقّعة بدون تخزين في قاعدة البيانات — أسرع وأأمن على بيئات الاستضافة السحابية.", en: "Sessions are signed and stateless — faster and safer on cloud hosting environments." },
+    ],
+    myRoleChips: ["Next.js", "React 19", "Prisma", "Auth & Roles", "Dashboards", "RTL UI"],
+    results: [
+      { ar: "متجر لايف شغال على Vercel بمنتجات وطلبات فعلية", en: "A live store on Vercel with real products and orders" },
+      { ar: "ثلاث لوحات تحكم: أدمن، مشرف، وتجربة شراء للعميل", en: "Three control surfaces: admin, supervisor, and the customer buying flow" },
+      { ar: "نظام اعتماد يحمي جودة محتوى المتجر", en: "An approval workflow that protects catalog quality" },
+      { ar: "كود نظيف: TypeScript صارم بدون أخطاء وESLint نضيف", en: "Clean code: strict TypeScript with zero errors and a clean ESLint pass" },
+    ],
+    impact: [
+      { ar: "صاحب المتجر يقدر يدير فريق بيع كامل من غير ما يقلق على المحتوى", en: "The owner can run a whole sales team without worrying about catalog content" },
+      { ar: "تجربة شراء عربية سريعة بتقلل التخلي عن السلة", en: "A fast Arabic buying experience that reduces cart abandonment" },
+      { ar: "أساس قابل للتوسع: بوابة دفع، شركات شحن، وتقارير أعمار لاحقاً", en: "A base ready to grow: payment gateway, shipping, and deeper reports later" },
+    ],
+    screenshots: [
+      {
+        title: { ar: "واجهة المتجر — المنتجات المميزة", en: "Storefront — featured products" },
+      },
+      {
+        title: { ar: "صفحة المنتج — مقاسات وألوان", en: "Product page — sizes & colors" },
+      },
+      {
+        title: { ar: "لوحة الأدمن — المنتجات والاعتماد", en: "Admin dashboard — products & approvals" },
+      },
+      {
+        title: { ar: "لوحة المشرف — المبيعات", en: "Supervisor panel — sales" },
+      },
+    ],
+  },
 ];
 
 export function getPublishedProjects() {

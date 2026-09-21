@@ -9,7 +9,7 @@ import { site } from "@/config/site";
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — ${site.role}`,
+    default: `${site.name} — ${site.role} | Web Systems, Stores & Security`,
     template: `%s — ${site.name}`,
   },
   description: site.description.en,
@@ -22,11 +22,14 @@ export const metadata: Metadata = {
     "Open Source",
     "Custom Business Systems",
     "Web Development",
+    "E-commerce Store",
+    "متجر إلكتروني",
+    "أنظمة إدارة",
     site.name,
   ],
   authors: [{ name: site.name }],
   openGraph: {
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} — ${site.role} | Web Systems, Stores & Security`,
     description: site.description.en,
     type: "website",
   },
