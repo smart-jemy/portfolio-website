@@ -19,7 +19,7 @@ export function StatsBar() {
                 <dt className="order-2 mt-2 text-xs sm:text-sm font-semibold text-muted-foreground leading-relaxed">
                   {stat.label}
                 </dt>
-                <dd className="order-1 text-2xl sm:text-3xl font-black text-gradient">
+                <dd className="order-1 text-2xl sm:text-3xl font-black text-gold-gradient">
                   {stat.value}
                 </dd>
               </div>

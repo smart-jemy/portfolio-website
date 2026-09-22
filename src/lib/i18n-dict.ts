@@ -28,9 +28,9 @@ export const dict = {
     stats: {
       items: [
         { value: "1+", label: "نظام إدارة حقيقي شغّال في السوق" },
-        { value: "4+", label: "مشاريع حقيقية بـ Case Study كاملة" },
+        { value: "6+", label: "مشاريع حقيقية بـ Case Study كاملة" },
         { value: "13+", label: "مصدر استطلاع في أداة الأمن المفتوحة" },
-        { value: "2", label: "أنظمة لايف شغّالة على Vercel الآن" },
+        { value: "3", label: "أنظمة لايف شغّالة على Vercel الآن" },
       ],
     },
     projectsSection: {
@@ -197,9 +197,9 @@ export const dict = {
     stats: {
       items: [
         { value: "1+", label: "Real management system live in production" },
-        { value: "4+", label: "Real projects with full case studies" },
+        { value: "6+", label: "Real projects with full case studies" },
         { value: "13+", label: "Recon sources in the open-source security tool" },
-        { value: "2", label: "Live systems running on Vercel right now" },
+        { value: "3", label: "Live systems running on Vercel right now" },
       ],
     },
     projectsSection: {

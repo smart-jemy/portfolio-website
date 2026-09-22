@@ -757,6 +757,117 @@ export const projects: Project[] = [
       },
     ],
   },
+
+  // ==========================================================
+  // ✅ المشروع رقم 6 — جادجيتا: متجر أجهزة المطبخ الذكية
+  //    Live: https://gadgate.vercel.app
+  // ==========================================================
+  {
+    slug: "gadgeta-store",
+    published: true,
+    emoji: "🍳",
+    title: {
+      ar: "جادجيتا — متجر حلول المطبخ الذكية",
+      en: "Gadgeta — Smart Kitchen Solutions Store",
+    },
+    subtitle: {
+      ar: "متجر إلكتروني بإدارة كاملة وعروض ذهبية",
+      en: "Full-featured e-commerce with golden deals engine",
+    },
+    short: {
+      ar: "متجر متكامل على Postgres: كوبونات، عروض ذهبية بأسعار يحددها الأدمن، ولوحة تحكم شاملة.",
+      en: "A complete store on Postgres: coupons, admin-priced golden deals, and a full control dashboard.",
+    },
+    type: {
+      ar: "متجر إلكتروني",
+      en: "E-commerce store",
+    },
+    year: "2026",
+    role: {
+      ar: "Full-Stack Developer — بناء كامل من الصفر",
+      en: "Full-Stack Developer — built end-to-end from scratch",
+    },
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Prisma", "PostgreSQL", "Neon", "JWT"],
+    liveUrl: "https://gadgate.vercel.app",
+    features: [
+      {
+        icon: Package,
+        title: { ar: "متجر كامل بتجربة شراء حقيقية", en: "Complete shopping experience" },
+        desc: {
+          ar: "أقسام، منتجات بالتفاصيل، سلة، مفضلة، وطلب حقيقي بقاعدة بيانات Postgres دائمة — مش demo.",
+          en: "Categories, detailed products, cart, favorites and real orders on a persistent Postgres database — not a demo.",
+        },
+      },
+      {
+        icon: Sparkles,
+        title: { ar: "محرّك العروض الذهبية", en: "Golden deals engine" },
+        desc: {
+          ar: "الأدمن يفعّل عرضاً ذهبياً بسعر وخصم يحددهم بنفسه على أي منتج — فيظهر فوراً بالتمييز في الواجهة.",
+          en: "Admin activates golden deals with custom prices and discounts on any product — highlighted instantly in the storefront.",
+        },
+      },
+      {
+        icon: CreditCard,
+        title: { ar: "كوبونات خصم بمنطق سيرفر", en: "Server-side coupons" },
+        desc: {
+          ar: "أكواد خصم بحد استخدام وصلاحية، والتحقق والتطبيق كله على السيرفر — التلاعب بالمستغمل مستحيل.",
+          en: "Discount codes with usage limits and validity, verified and applied server-side — no client tampering.",
+        },
+      },
+      {
+        icon: LayoutDashboard,
+        title: { ar: "لوحة أدمن شاملة", en: "Comprehensive admin panel" },
+        desc: {
+          ar: "منتجات وأقسام وطلبات وعملاء وكوبونات وعروض ذهبية وإعدادات تواصل تظهر في المتجر فوراً.",
+          en: "Products, categories, orders, customers, coupons, golden deals and contact settings reflected live in the store.",
+        },
+      },
+      {
+        icon: Globe,
+        title: { ar: "عربي/إنجليزي + ليلي/نهاري", en: "AR/EN + dark/light" },
+        desc: {
+          ar: "دعم كامل RTL/LTR مع وضع ليلي ونهاري، وصور مضغوطة تلقائياً بدون خدمات خارجية.",
+          en: "Full RTL/LTR support with dark and light modes, plus auto-compressed images without external services.",
+        },
+      },
+    ],
+    problem: [
+      { ar: "تاجر أجهزة مطبخ محتاج متجر بحقيقي بقاعدة بيانات دائمة وكوبونات وعروض يتحكم فيها بنفسه.", en: "A kitchen-appliance merchant needs a real store with a persistent database, coupons and deals he controls himself." },
+      { ar: "الحلول الجاهزة بتاخد عمولة أو اشتراك شهري ومش بتديه حرية كاملة في الشكل والعروض.", en: "Off-the-shelf platforms take commissions or subscriptions and give no full control over shape and deals." },
+      { ar: "محتاج نظام يشتغل بالعربي الأول بواجهة سريعة ومنظمة على الموبايل.", en: "He needs an Arabic-first system, fast and tidy on mobile." },
+    ],
+    solution: [
+      { ar: "بنيت المتجر على Neon Postgres — بيانات دائمة تفضل موجودة، مش قاعدة مؤقتة.", en: "I built the store on Neon Postgres — data persists, no temporary database." },
+      { ar: "كل الأسعار والخصومات والكوبونات بتتحسب على السيرفر بس — الأمان مش اختياري.", en: "All pricing, discounts and coupons are computed server-side only — security is not optional." },
+      { ar: "لوحة أدمن واحدة بتدير كل حاجة: من كتالوج المنتجات لحد رقم الواتساب اللي بيظهر في المتجر.", en: "One admin panel manages everything: from the product catalog to the WhatsApp number shown in the store." },
+    ],
+    myRoleChips: ["Next.js 16", "React 19", "Prisma", "Neon Postgres", "JWT Auth", "RTL"],
+    results: [
+      { ar: "متجر إنتاجي لايف على Vercel بقاعدة Neon دائمة", en: "A production store live on Vercel with persistent Neon database" },
+      { ar: "محرّك عروض ذهبية وكوبونات بإدارة كاملة", en: "Golden deals and coupon engine with full control" },
+      { ar: "دخول برقم الهاتف المصري بجلسات httpOnly آمنة", en: "Egyptian phone login with secure httpOnly sessions" },
+      { ar: "أداء عالي: صور مضغوطة webp وطلب خفيف", en: "High performance: webp-compressed images and a light bundle" },
+    ],
+    impact: [
+      { ar: "صاحب المتجر يدير كل حاجة بنفسه من غير مبرمج", en: "The owner runs everything himself without a developer" },
+      { ar: "العروض الذهبية بتطلع مبيعات محددة بأسعار مرنة", en: "Golden deals drive targeted sales with flexible pricing" },
+      { ar: "أساس قابل للتوسع: دفع إلكتروني وشحن لاحقاً", en: "A base ready to grow: payments and shipping later" },
+    ],
+    screenshots: [
+      {
+        title: { ar: "واجهة المتجر — العروض الذهبية", en: "Storefront — golden deals" },
+      },
+      {
+        title: { ar: "صفحة المنتج", en: "Product page" },
+      },
+      {
+        title: { ar: "لوحة الأدمن — إدارة كاملة", en: "Admin panel — full control" },
+      },
+      {
+        title: { ar: "السلة والدفع", en: "Cart & checkout" },
+      },
+    ],
+  },
 ];
 
 export function getPublishedProjects() {

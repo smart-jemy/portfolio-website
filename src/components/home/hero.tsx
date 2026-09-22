@@ -92,12 +92,12 @@ export function Hero() {
           >
             {lang === "ar" ? (
               <>
-                <span className="text-gradient">{site.nameAr.split(" ")[0]}</span>{" "}
+                <span className="text-gradient gold-underline">{site.nameAr.split(" ")[0]}</span>{" "}
                 <span>{site.nameAr.split(" ").slice(1).join(" ")}</span>
               </>
             ) : (
               <>
-                <span className="text-gradient">{site.name.split(" ")[0]}</span>{" "}
+                <span className="text-gradient gold-underline">{site.name.split(" ")[0]}</span>{" "}
                 <span>{site.name.split(" ").slice(1).join(" ")}</span>
               </>
             )}

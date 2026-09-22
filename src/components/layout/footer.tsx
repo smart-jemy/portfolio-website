@@ -99,6 +99,13 @@ export function Footer() {
           <p>
             © {year} {lang === "ar" ? site.nameAr : site.name}. {t.footer.rights}.
           </p>
+          <p className="flex items-center gap-1.5" dir="ltr">
+            <span aria-hidden className="text-gold-gradient">✦</span>
+            <span className="text-gold-gradient font-semibold tracking-widest uppercase text-[10px]">
+              Limited Edition
+            </span>
+            <span aria-hidden className="text-gold-gradient">✦</span>
+          </p>
           <p className="flex items-center gap-1">
             {t.footer.builtWith}{" "}
             <span className="font-semibold text-foreground">Next.js</span>
