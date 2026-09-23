@@ -52,27 +52,22 @@ export function Hero() {
           ) : null}
         </div>
 
-        {/* الصورة الرمزية — حلقة بنفسجية بلمسة ذهبية */}
+        {/* الصورة الشخصية — double exposure */}
         <div className="rise mb-8 flex justify-center" style={d(1)}>
           <div className="relative">
             <div
               aria-hidden
               className="absolute -inset-5 rounded-full bg-[conic-gradient(from_120deg,rgba(139,92,246,.4),rgba(212,175,55,.45),rgba(59,130,246,.35),rgba(139,92,246,.4))] blur-2xl"
             />
-            <div className="relative size-28 sm:size-36 rounded-full p-[3px] bg-[conic-gradient(from_120deg,#8b5cf6,#d4af37,#3b82f6,#8b5cf6)] glow">
-              <div className="flex size-full items-end justify-center overflow-hidden rounded-full bg-card">
-                {/* نسخة الوضع الليلي (حبر فاتح) + نسخة النهاري (حبر غامق) */}
+            <div className="relative size-32 sm:size-40 rounded-full p-[3px] bg-[conic-gradient(from_120deg,#8b5cf6,#d4af37,#3b82f6,#8b5cf6)] glow">
+              <div className="size-full overflow-hidden rounded-full bg-card">
                 <img
-                  src="/avatar-dark.png"
-                  alt=""
-                  aria-hidden
-                  className="hidden dark:block w-[78%] h-auto object-contain translate-y-1"
-                />
-                <img
-                  src="/avatar-light.png"
-                  alt=""
-                  aria-hidden
-                  className="dark:hidden w-[78%] h-auto object-contain translate-y-1"
+                  src="/profile-city-256.webp"
+                  alt="AhmeD — Full-Stack Developer"
+                  width={256}
+                  height={256}
+                  loading="eager"
+                  className="size-full object-cover"
                 />
               </div>
             </div>

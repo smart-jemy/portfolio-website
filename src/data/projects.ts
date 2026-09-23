@@ -100,6 +100,7 @@ export const projects: Project[] = [
       en: "Full-Stack Developer — built end-to-end from scratch",
     },
     technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "HTML5", "CSS3"],
+    liveUrl: "https://noorcenter.gt.tc",
     features: [
       {
         icon: ClipboardList,
@@ -767,12 +768,12 @@ export const projects: Project[] = [
     published: true,
     emoji: "🍳",
     title: {
-      ar: "جادجيتا — متجر حلول المطبخ الذكية",
-      en: "Gadgeta — Smart Kitchen Solutions Store",
+      ar: "جادجيتا — سحر وابتكار",
+      en: "Gadgeta — Magic & Innovation",
     },
     subtitle: {
-      ar: "متجر إلكتروني بإدارة كاملة وعروض ذهبية",
-      en: "Full-featured e-commerce with golden deals engine",
+      ar: "متجر إلكتروني كامل بمحرّك عروض ذهبية",
+      en: "Full-featured e-commerce with a golden deals engine",
     },
     short: {
       ar: "متجر متكامل على Postgres: كوبونات، عروض ذهبية بأسعار يحددها الأدمن، ولوحة تحكم شاملة.",
