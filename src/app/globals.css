@@ -231,3 +231,37 @@
   border-radius: 999px;
   background: linear-gradient(90deg, transparent, #d4af37 20%, #f6e27a 50%, #d4af37 80%, transparent);
 }
+
+/* ─── Entrance animations — content visible by default; JS only arms & reveals ─── */
+.rv-armed {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.rv-armed.rv-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.55s cubic-bezier(0.21, 0.47, 0.32, 0.98),
+    transform 0.55s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+}
+@media (prefers-reduced-motion: reduce) {
+  .rv-armed {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* hero stagger — same no-JS safety: html.anim-ready is added by client JS only */
+@media (prefers-reduced-motion: no-preference) {
+  .anim-ready .rise {
+    opacity: 0;
+    transform: translateY(22px);
+    animation: rise 0.6s cubic-bezier(0.21, 0.47, 0.32, 0.98) var(--d, 0ms) forwards;
+  }
+}
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

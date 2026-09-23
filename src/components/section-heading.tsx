@@ -30,9 +30,9 @@ export function SectionHeading({
         className
       )}
     >
-      <p className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-violet-500 dark:text-violet-400">
+      <p className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-amber-600 dark:text-amber-400">
         <span
-          className="inline-block size-1.5 rounded-full bg-violet-500"
+          className="inline-block size-1.5 rounded-full bg-gradient-to-br from-amber-300 to-amber-600"
           aria-hidden
           style={dir === "rtl" ? { marginInlineEnd: "0.5rem" } : undefined}
         />

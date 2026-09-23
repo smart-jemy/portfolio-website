@@ -8,12 +8,18 @@
 //   (e.g. data-track="whatsapp") so the owner knows which CTAs perform.
 // ============================================================================
 
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 export function Tracker() {
   const pathname = usePathname();
   const lastPath = useRef<string | null>(null);
+
+  // Arm entrance animations — client-side only, so content stays fully
+  // visible in any browser where JS fails to load (no blank pages).
+  useLayoutEffect(() => {
+    document.documentElement.classList.add("anim-ready");
+  }, []);
 
   useEffect(() => {
     if (pathname?.startsWith("/x") || pathname?.startsWith("/api")) return;

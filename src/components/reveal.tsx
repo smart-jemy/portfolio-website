@@ -1,10 +1,14 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useLayoutEffect, useRef, type ReactNode } from "react";
 
 /**
- * ظهور تدريجي ناعم عند الوصول للعنصر — مع احترام تقليل الحركة
+ * ظهور تدريجي عند الوصول للعنصر — بدون الاعتماد على JS في إظهار المحتوى.
+ *
+ * القاعدة: المحتوى ظاهر افتراضيًا في الـ HTML. عميلًا فقط (useLayoutEffect —
+ * قبل الرسم) نُسلّح العنصر بالإخفاء ثم نكشفه عند دخوله الشاشة بـ
+ * IntersectionObserver. لو فشل JS أو الـ Observer: العنصر يفضل ظاهر
+ * — مفيش صفحة فاضية في أي متصفح. ويحترم prefers-reduced-motion عبر CSS.
  */
 export function Reveal({
   children,
@@ -15,19 +19,31 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
 
-  if (reduce) return <div className={className}>{children}</div>;
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") return; // لا تسليح — ظاهر دائمًا
+    el.classList.add("rv-armed");
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            el.classList.add("rv-in");
+            io.disconnect();
+          }
+        }
+      },
+      { rootMargin: "0px 0px -60px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.55, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-    >
+    <div ref={ref} className={className} style={delay ? { transitionDelay: `${delay}ms` } : undefined}>
       {children}
-    </motion.div>
+    </div>
   );
 }
