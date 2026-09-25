@@ -209,9 +209,14 @@ export const projects: Project[] = [
       },
     ],
     screenshots: [
-      { title: { ar: "واجهة التطبيق الرئيسية", en: "App home screen" } },
-      { title: { ar: "لوحة تحكم الإدارة", en: "Admin dashboard" } },
-      { title: { ar: "صفحة الطلب على الويب", en: "Web ordering page" } },
+      { title: { ar: "واجهة التطبيق الرئيسية — المطاعم", en: "App home — restaurants list" }, src: "/screenshots/app-home.png" },
+      { title: { ar: "منيو المطعم مع السلة", en: "Restaurant menu with cart bar" }, src: "/screenshots/app-menu.png" },
+      { title: { ar: "منطقة الكباتن", en: "Captains zone" }, src: "/screenshots/app-captain.png" },
+      { title: { ar: "تتبع الأوردر لحظيًا", en: "Live order tracking" }, src: "/screenshots/app-confirm.png" },
+      { title: { ar: "الطلب أونلاين من الويب", en: "Web ordering" }, src: "/screenshots/web-order.png" },
+      { title: { ar: "السلة مع أكواد الخصم", en: "Cart with promo codes" }, src: "/screenshots/web-cart.png" },
+      { title: { ar: "لوحة تحكم الإدارة", en: "Admin dashboard" }, src: "/screenshots/admin-dashboard.png" },
+      { title: { ar: "إدارة الطلبات وإسنادها للكباتن", en: "Orders & captain assignment" }, src: "/screenshots/admin-orders.png" },
     ],
   },
   // ==========================================================
