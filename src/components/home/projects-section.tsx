@@ -26,7 +26,12 @@ export function ProjectsSection() {
 
         <div className="mt-12 space-y-8">
           {projects.map((project, i) => (
-            <ProjectCard key={project.slug} project={project} index={i} />
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              index={i}
+              featured={i === 0}
+            />
           ))}
         </div>
       </div>

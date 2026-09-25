@@ -10,7 +10,7 @@ import { Tracker } from "@/components/tracker";
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — ${site.role} | Web Systems, Stores & Security`,
+    default: `${site.name} — ${site.role} | Web Systems, Android Apps, Stores & Security`,
     template: `%s — ${site.name}`,
   },
   description: site.description.en,
@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     "Laravel",
     "Next.js",
     "Python",
+    "Android App",
+    "Delivery App",
+    "Zone Delivery",
+    "Java",
     "Cloud Security",
     "Open Source",
     "Custom Business Systems",
@@ -26,11 +30,12 @@ export const metadata: Metadata = {
     "E-commerce Store",
     "متجر إلكتروني",
     "أنظمة إدارة",
+    "تطبيق توصيل",
     site.name,
   ],
   authors: [{ name: site.name }],
   openGraph: {
-    title: `${site.name} — ${site.role} | Web Systems, Stores & Security`,
+    title: `${site.name} — ${site.role} | Web Systems, Android Apps, Stores & Security`,
     description: site.description.en,
     type: "website",
   },

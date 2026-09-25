@@ -17,10 +17,12 @@ export function ProjectCard({
   project,
   index = 0,
   compact = false,
+  featured = false,
 }: {
   project: Project;
   index?: number;
   compact?: boolean;
+  featured?: boolean;
 }) {
   const { t, lang, dir } = useLanguage();
   const ArrowIcon = dir === "rtl" ? ArrowLeft : ArrowRight;
@@ -34,16 +36,35 @@ export function ProjectCard({
     <Reveal delay={index * 0.08}>
       <article
         className={cn(
-          "group relative rounded-3xl border border-border/70 bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-300",
-          "hover:border-violet-500/40 hover:shadow-[0_0_60px_-20px_rgba(139,92,246,0.35)]",
+          "group relative rounded-3xl border bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:-translate-y-1",
+          featured
+            ? "border-orange-500/40 hover:border-orange-500/70 hover:shadow-[0_0_70px_-18px_rgba(249,115,22,0.45)]"
+            : "border-border/70 hover:border-violet-500/40 hover:shadow-[0_0_60px_-20px_rgba(139,92,246,0.35)]",
           !project.published && "opacity-90"
         )}
       >
         {/* شريط متدرج فوق */}
         <div
-          className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-violet-500/60 to-transparent"
+          className={cn(
+            "absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent to-transparent",
+            featured ? "via-orange-500/80" : "via-violet-500/60"
+          )}
           aria-hidden
         />
+
+        {/* شريط أحدث شغل */}
+        {featured ? (
+          <div
+            className="absolute top-4 end-4 z-10 flex items-center gap-1.5 rounded-full border border-orange-500/40 bg-orange-500/10 px-3 py-1 text-[11px] font-black text-orange-600 dark:text-orange-300"
+            aria-hidden
+          >
+            <span className="relative flex size-1.5">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-orange-400 opacity-70" />
+              <span className="relative inline-flex size-1.5 rounded-full bg-orange-500" />
+            </span>
+            {isAr ? "أحدث إصدار · 2026" : "LATEST · 2026"}
+          </div>
+        ) : null}
 
         <div className="p-6 sm:p-8">
           {/* الهيدر */}

@@ -72,6 +72,149 @@ export type Project = {
 
 export const projects: Project[] = [
   // ==========================================================
+  // ⭐ أحدث إصدار — طلبات المنيب: تطبيق توصيل مخصوص لمنطقة كاملة
+  // ==========================================================
+  {
+    slug: "moneib-delivery",
+    published: true,
+    emoji: "🛵",
+    title: {
+      ar: "طلبات المنيب",
+      en: "Moneib Delivery",
+    },
+    subtitle: {
+      ar: "تطبيق توصيل مخصوص لمنطقة كاملة — موبايل وويب ولوحة تحكم",
+      en: "Zone-locked delivery platform — Android app, Web & Admin panel",
+    },
+    short: {
+      ar: "أول منصة توصيل مخصوصة لمنطقة المنيب: أوردرات مطاعم وأي طلبات يومية — سوبر ماركت وصيدلية ومشاوير — كباتن معتمدين من المنطقة، لوحة تحكم كاملة، ومنيو بيتحدث لحظيًا بدون سيرفر مدفوع.",
+      en: "The first delivery platform dedicated to El-Mounib district: restaurant orders plus any daily errand — groceries, pharmacy, pickups — with verified local captains, a full admin dashboard, and a live menu that syncs with zero server cost.",
+    },
+    type: {
+      ar: "تطبيق أندرويد + ويب + لوحة تحكم",
+      en: "Android app + Web + Admin panel",
+    },
+    year: "2026",
+    role: {
+      ar: "المالك والمطور — من الفكرة للنشر",
+      en: "Owner & Developer — idea to production",
+    },
+    technologies: ["Java", "Android", "JavaScript", "HTML5", "CSS3", "GitHub", "SQLite"],
+    liveUrl: "https://smart-jemy.github.io/moneib-menu/",
+    features: [
+      {
+        icon: Smartphone,
+        title: { ar: "تطبيق أندرويد أصلي", en: "Native Android app" },
+        desc: {
+          ar: "بدون أي frameworks — 112KB فقط، يشتغل من أندرويد 7، عربي RTL بالكامل، وبيسحب المنيو من مصدر واحد.",
+          en: "Zero frameworks — just 112KB, runs on Android 7+, fully Arabic RTL, pulls the menu from a single source.",
+        },
+      },
+      {
+        icon: Sparkles,
+        title: { ar: "طلبات مخصصة وأي طلبات يومية", en: "Custom orders for any daily need" },
+        desc: {
+          ar: "مش مطاعم بس — العميل يكتب أي طلب من جوه المنطقة: سوبر ماركت، صيدلية، مشاوير — والكابتن ينفذه.",
+          en: "Not just restaurants — customers write any errand inside the zone: groceries, pharmacy, pickups — and a captain executes it.",
+        },
+      },
+      {
+        icon: Radar,
+        title: { ar: "نظام كباتن معتمدين", en: "Verified captains system" },
+        desc: {
+          ar: "تسجيل من الموقع بصورة شخصية، موافقة الإدارة، ودخول في التطبيق برقم الموبايل — التحقق بهاش مشفر بدون كشف الأرقام.",
+          en: "Website registration with photo, admin approval, and in-app phone login — verified via salted hashes so numbers are never exposed.",
+        },
+      },
+      {
+        icon: LayoutDashboard,
+        title: { ar: "لوحة تحكم كاملة", en: "Full admin dashboard" },
+        desc: {
+          ar: "مطاعم ومنيوهات وأسعار وأكواد خصم وكباتن وإحصائيات — بتتحفظ على GitHub وبتنشر للتطبيقات بضغطة واحدة.",
+          en: "Restaurants, menus, prices, promo codes, captains and stats — stored on GitHub and published to all clients with one tap.",
+        },
+      },
+      {
+        icon: ShieldCheck,
+        title: { ar: "أمان على أكثر من مستوى", en: "Layered security" },
+        desc: {
+          ar: "HTTPS إجباري، كلمات سر هاش، CSP، لوحة على رابط سري، وفحص أمان عميق — النتيجة: صفر ثغرات.",
+          en: "Enforced HTTPS, hashed credentials, CSP, hidden panel route, and a deep security audit — zero findings.",
+        },
+      },
+      {
+        icon: Network,
+        title: { ar: "بنية جاهزة للتوسع", en: "Built to expand" },
+        desc: {
+          ar: "قاعدة البيانات على GitHub وثلاث واجهات (تطبيق/ويب/إدارة) على مصدر واحد — منطقة جديدة = بيانات جديدة، مش بناء من الأول.",
+          en: "GitHub-backed data with three clients (app/web/admin) on one source — a new district is new data, not a rebuild.",
+        },
+      },
+    ],
+    problem: [
+      {
+        ar: "تطبيقات التوصيل الكبيرة مش بتغطي المناطق الشعبية زي المنيب — أهل المنطقة مش لاقيين مطاعمهم على أي تطبيق، والمطاعم المحلية نفسها مش ظاهرة في أي مكان أونلاين.",
+        en: "Big delivery apps don't cover working-class districts like El-Mounib — residents can't find their local restaurants on any app, and the restaurants themselves have zero online presence.",
+      },
+      {
+        ar: "المطاعم الصغيرة بتدفع عمولات مرتفعة لمنصات مش بتخدم منطقتها أصلًا، وأي حل بديل محتاج سيرفر وتكاليف شهرية قبل أول عميل — فمفيش حد بيبدأ أصلًا.",
+        en: "Small restaurants pay high commissions to platforms that don't even serve their district, and any alternative needs servers and monthly costs before the first customer — so nobody starts.",
+      },
+      {
+        ar: "الطلبات اليومية — سوبر ماركت أو صيدلية أو مشوار بسيط — مالهاش أي حل منظم: كله مكالمات وتفاهمات وارتباك.",
+        en: "Daily errands — groceries, pharmacy, simple pickups — have no structured solution at all: just calls, back-and-forth, and chaos.",
+      },
+    ],
+    solution: [
+      {
+        ar: "بنيت منصة كاملة (تطبيق أندرويد + موقع طلب + لوحة تحكم) مخصوصة لمنطقة واحدة، بقاعدة بيانات على GitHub API — يعني صفر تكاليف سيرفر، والبيانات ملك للمالك بالكامل.",
+        en: "I built a complete platform (Android app + ordering site + admin dashboard) dedicated to one district, with its database on the GitHub API — zero server cost, and the data fully owned by the operator.",
+      },
+      {
+        ar: "المنيو بينشر لحظيًا من لوحة التحكم لكل الواجهات بضغطة واحدة، والأوردرات بتوصل الإدارة والكباتن فورًا عبر واتساب — تجربة سريعة بالطريقة اللي الناس فعلاً بتشتغل بيها.",
+        en: "The menu publishes live from the dashboard to every client with one tap, and orders reach the store and captains instantly via WhatsApp — fast, using the channel people actually work with.",
+      },
+      {
+        ar: "نظام كباتن من أهل المنطقة: تسجيل من الموقع بصورة شخصية وموافقة إدارة، ودخول في التطبيق برقم الموبايل — التحقق بيتم بهاش مشفر بحيث الأرقام الشخصية مش منشورة أبدًا.",
+        en: "A captains system from the neighborhood: website registration with a photo and admin approval, then in-app login by phone number — verification runs through salted hashes so personal numbers are never published.",
+      },
+    ],
+    myRoleChips: ["Product", "Android", "Web", "Admin Panel", "Security", "Release"],
+    results: [
+      {
+        ar: "تطبيق أندرويد أصلي بحجم 112KB بس — يشتغل من أندرويد 7، عربي RTL بالكامل، وبيمر فحص أمان عميق بصفر ثغرات.",
+        en: "A native Android app at just 112KB — runs on Android 7+, fully Arabic RTL, and passes a deep security audit with zero findings.",
+      },
+      {
+        ar: "8 مطاعم و66 صنف يوم الإطلاق، وأي تعديل في المنيو بيتنشر لكل المستخدمين خلال دقائق — من غير سيرفر ولا صيانة.",
+        en: "8 restaurants and 66 menu items on launch day, and any menu change reaches every user within minutes — no servers, no maintenance.",
+      },
+      {
+        ar: "ثلاث منصات (موبايل/ويب/إدارة) شغالة على نفس مصدر البيانات بتكلفة تشغيل شهرية صفر — وخدمة طلب مخصص بتعمل خط إضافي للدخل.",
+        en: "Three platforms (mobile/web/admin) running on one data source at zero monthly cost — plus a custom-orders service adding an extra revenue line.",
+      },
+    ],
+    impact: [
+      {
+        ar: "أول منصة بتتعامل مع المنطقة دي كـ«زون» مستقلة — النموذج قابل للتكرار لأي منطقة جديدة بنفس مستوى الجودة بدون بناء من الأول.",
+        en: "The first platform treating this district as its own delivery zone — a repeatable model for every new area at the same quality bar, without rebuilding from scratch.",
+      },
+      {
+        ar: "مطاعم المنطقة بتبيع أونلاين من غير أي عمولة، والكباتن من أهل المنطقة لاقيين دخل إضافي بوقت مرن.",
+        en: "Local restaurants sell online with zero commission, and neighborhood captains gain flexible extra income.",
+      },
+      {
+        ar: "العميل بيوفر وقت وربط: أي طلب يومي — من فطار لحد دواء — بيكتبه مرة واحدة من موبايله والكابتن بينفذه.",
+        en: "Customers save time and hassle: any daily errand — from breakfast to medication — is written once from their phone and executed by a captain.",
+      },
+    ],
+    screenshots: [
+      { title: { ar: "واجهة التطبيق الرئيسية", en: "App home screen" } },
+      { title: { ar: "لوحة تحكم الإدارة", en: "Admin dashboard" } },
+      { title: { ar: "صفحة الطلب على الويب", en: "Web ordering page" } },
+    ],
+  },
+  // ==========================================================
   // ✅ المشروع رقم 1 — نظام إدارة مركز صيانة الأجهزة
   // ==========================================================
   {

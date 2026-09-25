@@ -24,6 +24,8 @@ export const techStack: Record<TechCategory, TechItem[]> = {
     { name: "PHP", devicon: "php", color: "#777BB4", fallback: "PHP" },
     { name: "Python", devicon: "python", color: "#3776AB", fallback: "Py" },
     { name: "MySQL", devicon: "mysql", color: "#4479A1", fallback: "SQL" },
+    { name: "Java", devicon: "java", color: "#EA2D2E", fallback: "Ja" },
+    { name: "SQLite", devicon: "sqlite", color: "#003B57", fallback: "DB" },
   ],
   frontend: [
     { name: "Next.js", devicon: "nextjs", file: "nextjs-original.svg", invertInDark: true, color: "#8889f4", fallback: "N" },
@@ -37,6 +39,7 @@ export const techStack: Record<TechCategory, TechItem[]> = {
   tools: [
     { name: "Git", devicon: "git", color: "#F05032", fallback: "Git" },
     { name: "GitHub", devicon: "github", file: "github-original.svg", invertInDark: true, color: "#a1a1aa", fallback: "GH" },
+    { name: "Android", devicon: "android", file: "android-original.svg", color: "#3DDC84", fallback: "An" },
   ],
 };
 

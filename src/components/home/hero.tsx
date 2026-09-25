@@ -40,7 +40,7 @@ export function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-36 pb-20 sm:pt-44 sm:pb-28 text-center">
         {/* Badge متاح */}
-        <div className="rise mb-8" style={d(0)}>
+        <div className="rise mb-6" style={d(0)}>
           {site.available ? (
             <span className="inline-flex items-center gap-2.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-xs sm:text-sm font-bold text-amber-600 dark:text-amber-300">
               <span className="relative flex size-2" aria-hidden>
@@ -50,6 +50,29 @@ export function Hero() {
               {t.hero.badge}
             </span>
           ) : null}
+        </div>
+
+        {/* أحدث شغل — طلبات المنيب */}
+        <div className="rise mb-7 flex justify-center" style={d(1)}>
+          <Link
+            href="/projects/moneib-delivery"
+            className="group inline-flex items-center gap-3 rounded-2xl border border-orange-500/40 bg-gradient-to-l from-orange-500/15 via-orange-500/5 to-transparent px-4 py-2.5 text-sm font-bold text-orange-600 transition-all hover:border-orange-500/70 hover:shadow-[0_8px_30px_-8px_rgba(249,115,22,0.45)] dark:text-orange-300"
+          >
+            <span className="text-xl transition-transform group-hover:-translate-y-0.5" aria-hidden>
+              🛵
+            </span>
+            <span>
+              {dir === "rtl" ? "أحدث شغل — " : "Latest drop — "}
+              <span className="underline decoration-orange-500/50 decoration-2 underline-offset-4">
+                {dir === "rtl" ? "طلبات المنيب" : "Moneib Delivery"}
+              </span>
+              {dir === "rtl" ? " لايف الآن" : " — now live"}
+            </span>
+            <ArrowIcon
+              className="size-4 transition-transform group-hover:-translate-x-1"
+              aria-hidden
+            />
+          </Link>
         </div>
 
         {/* الصورة الشخصية — double exposure */}
