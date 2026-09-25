@@ -1,7 +1,7 @@
 // ============================================================
 // ⚙️ Site Config — عدّل كل حاجة هنا في مكان واحد
 // اسمك، اللينكات، الإيميل، رقم الواتساب... إلخ
-// deploy trigger: v2 portfolio with moneib-delivery case study
+// deploy trigger: git connected — auto-deploy active (moneib case study v2)
 // ============================================================
 
 export const site = {
